@@ -1,0 +1,18 @@
+
+<div class="flex" style="display: flex; justify-content: space-between; height: 100px;">
+  <h5>Airbnb</h5>
+  <h5><%= link_to "Add flat", new_flat_path %></h5>
+</div>
+
+<div class="grid" style="display: grid; grid-template-columns:repeat(3, 1fr); grid-gap: 10px;">
+  <% @flats.each do |flat| %>
+    <div class="item" style="border: 2px solid black; padding-left: 10px;">
+      <h4><%= flat.name %></h4>
+      <p><%= flat.description %></p>
+      <div class="flex" style="display: flex; gap: 20px;">
+        <p>👨‍👩‍👧<%= flat.number_of_guests %></p>
+        <p>€<%= flat.price_per_night %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
